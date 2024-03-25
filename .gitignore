@@ -35,4 +35,4 @@ build/
 ### VS Code ###
 .vscode/
 
-/docker/redis/data/
+/resources/docker/redis/data/

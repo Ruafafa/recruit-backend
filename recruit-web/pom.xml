@@ -4,6 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <packaging>pom</packaging>
+
     <parent>
         <groupId>com.yundingshuyuan</groupId>
         <artifactId>recruit</artifactId>
@@ -19,11 +21,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.yundingshuyuan</groupId>
-            <artifactId>recruit-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot-starter</artifactId>
@@ -56,7 +53,7 @@
         </dependency>
         <dependency>
             <groupId>com.yundingshuyuan</groupId>
-            <artifactId>recruit-service</artifactId>
+            <artifactId>recruit-services</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

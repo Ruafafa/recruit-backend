@@ -8,7 +8,6 @@ import com.yundingshuyuan.recruit.api.TestService;
 import com.yundingshuyuan.recruit.domain.User;
 import com.yundingshuyuan.recruit.utils.RedisUtils;
 import com.yundingshuyuan.recruit.web.annotation.RecruitResult;
-import com.yundingshuyuan.vo.BasicResultVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
