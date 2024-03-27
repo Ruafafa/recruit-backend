@@ -30,6 +30,12 @@
             <artifactId>recruit-common-spring-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.yundingshuyuan</groupId>
+            <artifactId>recruit-bases-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

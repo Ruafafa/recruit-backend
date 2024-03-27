@@ -19,15 +19,13 @@ import java.time.LocalDateTime;
 public class MyMetaObjectHandler implements MetaObjectHandler {
 @Override
     public void insertFill(MetaObject metaObject) {
-    log.info("公共字段自动填充[insert]");
-    metaObject.setValue("createTime", LocalDateTime.now());
-    metaObject.setValue("updateTime",LocalDateTime.now());
+    this.setFieldValByName("createTime", LocalDateTime.now(), metaObject);
+    this.setFieldValByName("updateTime", LocalDateTime.now(), metaObject);
+    this.setFieldValByName("deleted", false, metaObject);
     }
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        log.info("公共字段自动填充[update]");
-        log.info(metaObject.toString());
         metaObject.setValue("updateTime",LocalDateTime.now());
     }
 }

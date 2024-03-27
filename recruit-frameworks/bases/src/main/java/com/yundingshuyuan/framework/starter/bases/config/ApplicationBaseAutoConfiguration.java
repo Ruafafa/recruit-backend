@@ -14,12 +14,6 @@ public class ApplicationBaseAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public ApplicationContextHolder applicationContextHolder() {
-        return new ApplicationContextHolder();
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
     public ApplicationContentPostProcessor applicationContentPostProcessor(ApplicationContext applicationContext) {
         return new ApplicationContentPostProcessor(applicationContext);
     }

@@ -1,0 +1,93 @@
+server:
+  port: 19092
+
+# spring
+spring:
+  banner:
+    charset: utf-8
+    location: classpath:banner.txt
+  datasource:
+    druid:
+      statViewServlet:
+        enabled: true
+        allow:
+        login-username: admin
+        login-password: 123456
+    dynamic:
+      druid:
+        # 初始连接数
+        initialSize: 5
+        # 最小连接池数量
+        minIdle: 10
+        # 最大连接池数量
+        maxActive: 20
+        # 配置获取连接等待超时的时间
+        maxWait: 60000
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 60000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        minEvictableIdleTimeMillis: 300000
+        # 配置一个连接在池中最大生存的时间，单位是毫秒
+        maxEvictableIdleTimeMillis: 900000
+        # 配置检测连接是否有效
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        webStatFilter:
+          enabled: true
+        filter:
+          stat:
+            enabled: true
+            # 慢SQL记录
+            log-slow-sql: true
+            slow-sql-millis: 1000
+            merge-sql: true
+          wall:
+            config:
+              multi-statement-allow: true
+      # 设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      # 严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      strict: false
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:23306/recruit?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&rewriteBatchedStatements=true
+          username: root
+          password: recruit+-
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+# apollo 配置
+apollo:
+  bootstrap:
+    eagerLoad:
+      enabled: true
+    enabled: true
+    namespaces: application
+
+app:
+  id: Recruit
+
+# 日志配置
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    com.github.binarywang.demo.wx.miniapp: debug
+    cn.binarywang.wx.miniapp: debug
+
+# mybatis 配置
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:mybatis/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+
+
+
+debug: true
+

@@ -9,8 +9,19 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <modules>
+        <module>user-service</module>
+        <module>ticket-service</module>
+        <module>interview-service</module>
+        <module>exhibition-service</module>
+        <module>checkin-service</module>
+        <module>gateway-service</module>
+        <module>admin-service</module>
+    </modules>
+
     <artifactId>recruit-services</artifactId>
     <name>recruit-services</name>
+    <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,14 +30,23 @@
     </properties>
 
     <dependencies>
+        <!-- @ConfigurationProperties annotation processing (metadata for IDEs) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>cn.dev33</groupId>
             <artifactId>sa-token-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.yundingshuyuan</groupId>
-            <artifactId>recruit-support</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -27,19 +27,19 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class OkHttpConfiguration {
 
-    @Value("${ok.http.connect-timeout}")
+    @Value("${ok.http.connect-timeout:30}")
     private Integer connectTimeout;
 
-    @Value("${ok.http.read-timeout}")
+    @Value("${ok.http.read-timeout:30}")
     private Integer readTimeout;
 
-    @Value("${ok.http.write-timeout}")
+    @Value("${ok.http.write-timeout:30}")
     private Integer writeTimeout;
 
-    @Value("${ok.http.max-idle-connections}")
+    @Value("${ok.http.max-idle-connections:200}")
     private Integer maxIdleConnections;
 
-    @Value("${ok.http.keep-alive-duration}")
+    @Value("${ok.http.keep-alive-duration:300}")
     private Long keepAliveDuration;
 
     @Bean

@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yundingshuyuan.recruit.framework.starter.common.config.OkHttpConfiguration,\
+com.yundingshuyuan.recruit.framework.starter.common.config.CommonAutoConfiguration

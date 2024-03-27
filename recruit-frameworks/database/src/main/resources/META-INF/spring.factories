@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.yundingshuyuan.recruit.framework.starter.database.config.MybatisPlusAutoConfiguration
