@@ -1,6 +1,7 @@
 package com.yundingshuyuan.recruit.biz.aggregation;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
         "com.yundingshuyuan.recruit.biz.userservice",
         "com.yundingshuyuan.recruit.biz.gatewayservice"
 })
+@MapperScan("com.yundingshuyuan.recruit.biz.*.dao.mapper")
 public class RecruitApplication {
     public static void main(String[] args) {
         System.setProperty("apollo.configService", "http://localhost:8080");

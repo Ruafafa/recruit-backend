@@ -58,6 +58,7 @@ public class RecruitGlobalExceptionHandlerAdvice {
         return Results.failure(RespStatusEnum.SERVICE_ERROR.code(), "An unexpected error occurred");
     }
 
+
     private String getUrl(HttpServletRequest request) {
         if (StringUtils.isEmpty(request.getQueryString())) {
             return request.getRequestURL().toString();

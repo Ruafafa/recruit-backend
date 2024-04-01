@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class WxMiniAppUserLoginRespDTO {
 
     String token;
-    String openId;
 }

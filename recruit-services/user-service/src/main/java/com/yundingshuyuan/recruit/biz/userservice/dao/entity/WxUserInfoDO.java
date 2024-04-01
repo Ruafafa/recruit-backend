@@ -1,12 +1,14 @@
 package com.yundingshuyuan.recruit.biz.userservice.dao.entity;
 
-import com.baomidou.mybatisplus.annotation.*;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
+import com.yundingshuyuan.recruit.framework.starter.database.base.BaseDO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 
 @TableName("user_info")
@@ -14,44 +16,25 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserInfoDO {
+public class WxUserInfoDO extends BaseDO {
 
     @TableId
     private Integer id;
-
-    @TableField("cloud_id")
-    private Integer cloudId;
-
+    @TableField("open_id")
+    private String openId;
     private String name;
     private String gender;
-
     private String phone;
     private String email;
     @TableField("student_number")
     private String studentNumber;
     private String qq;
-
     private String major;
+    // 书院ID
     @TableField("academy_id")
     private Integer academyId;
-    @TableField("is_lectured")
-    private Boolean isLectured;
-    @TableField("is_passed")
-
-    private Boolean isPassed;
-    @TableField("qr_code")
-
-    private String qrCode;
-
+    // 用户权限
+    private Integer limits;
     @Version
     private Integer version;
-
-    @TableLogic
-    private Boolean deleted;
-    @TableField(value = "create_time", fill = FieldFill.INSERT)
-    private LocalDateTime createTime;
-
-    @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime updateTime;
-
 }

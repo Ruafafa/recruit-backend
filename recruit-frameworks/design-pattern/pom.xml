@@ -10,7 +10,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <packaging>pom</packaging>
     <artifactId>recruit-design-pattern-spring-boot-starter</artifactId>
 
     <properties>
@@ -33,6 +32,12 @@
         <dependency>
             <groupId>com.yundingshuyuan</groupId>
             <artifactId>recruit-bases-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.yundingshuyuan</groupId>
+            <artifactId>recruit-convention-spirng-boot-starter</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

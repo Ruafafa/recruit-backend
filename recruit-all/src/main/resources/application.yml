@@ -57,6 +57,13 @@ spring:
           password: recruit+-
           driver-class-name: com.mysql.cj.jdbc.Driver
 
+  redis:
+    host: localhost
+    port: 16379
+    password: recruit
+    timeout: 60000
+
+
 
 # apollo 配置
 apollo:
@@ -81,7 +88,7 @@ logging:
 
 # MyBatis-Plus 配置
 mybatis-plus:
-  mapper-locations: classpath*:mybatis/**/*.xml
+  mapper-locations: classpath*:mybatis/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true

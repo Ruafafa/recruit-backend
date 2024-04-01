@@ -1,8 +1,9 @@
 package com.yundingshuyuan.recruit.framework.starter.designpattern.strategy;
 
-import org.opengoofy.index12306.framework.starter.bases.ApplicationContextHolder;
-import org.opengoofy.index12306.framework.starter.bases.init.ApplicationInitializingEvent;
-import org.opengoofy.index12306.framework.starter.convention.exception.ServiceException;
+
+import com.yundingshuyuan.framework.starter.bases.init.events.ApplicationInitializingEvent;
+import com.yundingshuyuan.framework.starter.convention.exception.ServiceException;
+import com.yundingshuyuan.recruit.framework.starter.common.utils.SpringUtils;
 import org.springframework.context.ApplicationListener;
 import org.springframework.util.StringUtils;
 
@@ -39,7 +40,7 @@ public class AbstractStrategyChoose implements ApplicationListener<ApplicationIn
 
     @Override
     public void onApplicationEvent(ApplicationInitializingEvent event) {
-        Map<String, AbstractExecuteStrategy> actual = ApplicationContextHolder.getBeansOfType(AbstractExecuteStrategy.class);
+        Map<String, AbstractExecuteStrategy> actual = SpringUtils.getBeansOfType(AbstractExecuteStrategy.class);
         actual.forEach((beanName, bean) -> {
             AbstractExecuteStrategy beanExist = abstractExecuteStrategyMap.get(bean.mark());
             if (beanExist != null) {

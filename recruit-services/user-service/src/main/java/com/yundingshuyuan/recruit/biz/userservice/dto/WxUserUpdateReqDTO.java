@@ -1,5 +1,7 @@
 package com.yundingshuyuan.recruit.biz.userservice.dto;
 
+import com.yundingshuyuan.recruit.biz.userservice.dao.entity.WxUserInfoDO;
+import io.github.linpeilie.annotations.AutoMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserUpdateReqDTO {
+@AutoMapper(target = WxUserInfoDO.class)
+public class WxUserUpdateReqDTO {
     // 真实姓名
     String name;
     // 性别
